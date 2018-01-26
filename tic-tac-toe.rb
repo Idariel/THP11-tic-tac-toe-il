@@ -72,7 +72,6 @@ class Board
 end
 
 class Player
-  #TO DO : la classe a 2 attr_accessor, son nom, sa valeur (X ou O). Elle a un attr_writer : il a gagné ?
   attr_accessor :name
   attr_accessor :valeur
   attr_writer :status
@@ -90,7 +89,6 @@ end
 
 class Game
   def initialize
-    #TO DO : créé 2 joueurs, créé un board
     puts "Voulez-vous jouer à Tic Tac Toe ?\n\n"
     puts "Joueur1, quel est votre prénom"
     @joueur1 = Player.new
@@ -104,12 +102,10 @@ class Game
   end
 
   def go
-    # TO DO : lance la partie
     @board = Board.new
     while true
       @board.def_s
-      player1_joue
-      player2_joue
+      turn
   end
 
   def turn
