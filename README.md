@@ -1,5 +1,8 @@
 # THPj11-tic-tac-toe-il
 
+Il faut lancer tic-tac-toe.rb
+
+
 Tic Tac Toe
 
 Aujourd'hui, tu vas faire un programme from scratch qui va te faire manipuler les classes, et te faire jouer avec de l'abstrait. Ce programme sera le plus abstrait de la formation, mais il est indispensable de faire de l'abstrait pour mieux appréhender les problématiques de code.
