@@ -1,4 +1,4 @@
-# Affiche la valeur de la case : x, o ou vide (null?)class BoardCase
+# Affiche la valeur de la case : x, o ou vide (null?)
 class BoardCase
   attr_accessor :contenu #OK : renvoie le contenu à Board
   attr_accessor :n #n = numéro de case : @a1/@a2etc
@@ -10,8 +10,6 @@ class BoardCase
     @contenu.to_s
   end
 end
-
-
 
 class Board
   include Enumerable
@@ -79,11 +77,13 @@ class Player
   attr_accessor :valeur
   attr_writer :status
 
-  def initialize (name, valeur)
-    #TO DO : doit régler son nom, sa valeur, son état de victoire
-    @name = gets.name
+  def initialize
+    @name = gets.chomp
     @valeur = valeur
     @status
+  end
+  def to_s
+    @name.to_s
   end
 end
 
@@ -91,19 +91,23 @@ end
 class Game
   def initialize
     #TO DO : créé 2 joueurs, créé un board
+    puts "Voulez-vous jouer à Tic Tac Toe ?\n\n"
+    puts "Joueur1, quel est votre prénom"
     @joueur1 = Player.new
+    puts "Bonjour #{@joueur1} ! Vous jouez avec les X\n\n"
+    puts "Joueur2, quel est votre prénom"
     @joueur2 = Player.new
+    puts "Bonjour #{@joueur2} ! Vous jouez avec les O\n\n"
+    puts "Pour jouer une case, indiquer sa ligne (A, B ou C) et sa colonne (1, 2 ou 3) (par exemple, a1 ou b3 ou c2)."
+    puts "Vous pouvez sortir du jeu à tout moment en tapant q\n\n"
     @board = Board.new
   end
 
   def go
     # TO DO : lance la partie
-    puts "Voulez-vous jouer à Tic Tac Toe ?"
-    puts "Pour jouer une case, indiquer sa ligne (A, B ou C) et sa colonne (1, 2 ou 3) (par exemple, a1 ou b3 ou c2)."
-    puts "Vous pouvez sortir du jeu à tout moment en tapant q"
-    board = Board.new
+    @board = Board.new
     while true
-      Board.def_s
+      @board.def_s
       player1_joue
       player2_joue
   end
@@ -173,16 +177,4 @@ class Game
 end
 
 # Lancement du jeu
-# Game.new.go
-
-
-#=================
-#TEST
-#=================
-# Test l'affichage du Board initial
-board1 = Board.new
-board1.def_s
-
-# Test class Player
-# player = Player.new
-# player.initialize
+Game.new.go
